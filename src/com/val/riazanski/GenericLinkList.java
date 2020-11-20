@@ -11,8 +11,14 @@ class GenericLinkList<Stamp> implements Iterable<Stamp> {
 
     //    internal class
     private static class Node<Stamp> {
+//        fields
         private Stamp stamp;
         private Node<Stamp> next;
+//        constructors
+        public Node(Stamp stamp, Node<Stamp> next) {
+            this.stamp = stamp;
+            this.next = next;
+        }
     }
     public GenericLinkList() {
         head = null;
@@ -32,15 +38,18 @@ class GenericLinkList<Stamp> implements Iterable<Stamp> {
     }
     public void add(Stamp st) {
         Node<Stamp> exTail = tail;
-        tail = new Node<Stamp>();
-        tail.stamp = st;
-        tail.next = null;
+        tail = new Node<Stamp>(st, null);
         if (isEmpty()) {
             head = tail;
         } else {
             exTail.next = tail;
             n++;
         }
+    }
+    public void addFirst(Stamp st) {
+        Node<Stamp> exHead = head;
+        head = new Node<Stamp>(st, exHead);
+        n++;
     }
     public void removeFirst() {
         if (isEmpty()) throw  new NoSuchElementException("List is empty");
