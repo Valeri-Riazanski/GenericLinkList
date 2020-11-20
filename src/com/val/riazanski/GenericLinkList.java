@@ -8,8 +8,7 @@ class GenericLinkList<Stamp> implements Iterable<Stamp> {
     private Node<Stamp> head;
     private Node<Stamp> tail;
     private int n;
-
-    //    internal class
+//    internal class
     private static class Node<Stamp> {
 //        fields
         private Stamp stamp;
@@ -18,6 +17,13 @@ class GenericLinkList<Stamp> implements Iterable<Stamp> {
         public Node(Stamp stamp, Node<Stamp> next) {
             this.stamp = stamp;
             this.next = next;
+        }
+//      methods
+        public void printStamp() {
+            StringBuilder str = new StringBuilder();
+            str.append(stamp);
+            str.append(" -> ");
+            System.out.print("\033[0;32m" + str + "\033[0m");
         }
     }
     public GenericLinkList() {
@@ -86,6 +92,16 @@ class GenericLinkList<Stamp> implements Iterable<Stamp> {
         }
         return s.toString();
     }
+    public void printList() {
+        System.out.print("List / size=" + n + " / ");
+        Node current = head;
+        while (current != null) {
+            current.printStamp();
+            current = current.next;
+        }
+        System.out.println(" ");
 
+
+    }
 
 }

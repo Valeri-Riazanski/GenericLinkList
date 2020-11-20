@@ -6,15 +6,19 @@ public class Test {
         Book book = new Book(3);
         String str = book.createWord(3);
         genericList.add(str);
-        System.out.println(ConsoleColors.GREEN + genericList.size() + "  " + genericList.toString() + ConsoleColors.RESET);
+        genericList.printList();
+//        System.out.println(ConsoleColors.GREEN + genericList.size() + "  " + genericList.toString() + ConsoleColors.RESET);
         str = book.createMetaWord(3);
         genericList.add(str);
-        System.out.println(ConsoleColors.GREEN + genericList.size() + "  " + genericList.toString() + ConsoleColors.RESET);
+        genericList.printList();
+//        System.out.println(ConsoleColors.GREEN + genericList.size() + "  " + genericList.toString() + ConsoleColors.RESET);
         str = book.createMetaWord(3);
         genericList.addFirst(str);
-        System.out.println(ConsoleColors.BLUE + genericList.size() + "  " + genericList.toString() + ConsoleColors.RESET);
+        genericList.printList();
+//        System.out.println(ConsoleColors.BLUE + genericList.size() + "  " + genericList.toString() + ConsoleColors.RESET);
         genericList.removeFirst();
-        System.out.println(ConsoleColors.PURPLE + genericList.size() + "  " + genericList.toString() + ConsoleColors.RESET);
+        genericList.printList();
+//        System.out.println(ConsoleColors.PURPLE + genericList.size() + "  " + genericList.toString() + ConsoleColors.RESET);
 
 
     }
